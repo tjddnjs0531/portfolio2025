@@ -1,0 +1,43 @@
+<div id="about">
+	...
+</div>
+<div id="slogun">
+	<div class="slogun">
+		<p class="s_txt01">By designing the Code</p>
+		<p class="s_txt02">Design Reproduction</p>
+		   <p class="s_txt03">It's "Publisher"</p>
+	</div>
+</div>
+
+<style>
+	#slogun .slogun { font-family: 'Dealoras'; position: relative; font-size: 12rem; color: rgba(255,255,255,.2);}
+	#slogun .slogun p { position: relative; width: max-content; -webkit-text-fill-color: rgba(26, 26, 26, 0.1);-webkit-background-clip: text;background-repeat: no-repeat;background-image: linear-gradient(90deg, #fff 0%, #fff 50%, transparent 50.1%);background-size: 0% 100%; transform: translateY(100%); transition:background-size cubic-bezier(.1,.5,.5,1) 0.5s }
+	#about .introduce.desc { color: #999; width: 50%; margin: 0 0 0 auto; text-align: left; word-break: keep-all; }
+</style>
+
+<script>
+	const slogunAni01 = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#about",
+			pin: false,
+			scrub: false,
+			start: 'center',
+		}
+	}).to('#slogun p', { y: "0%", duration: 1, ease: 'power1.out' });
+	  
+	// slogun 텍스트 배경 그라디언트 애니메이션
+	const slogunAni02 = gsap.timeline({
+	scrollTrigger: {
+		trigger: "#slogun",
+		pin: true,
+		scrub: 2,
+		start: 'top',
+	}
+	})
+	.to('#slogun .s_txt01', { backgroundSize: "200% 100%", duration: 2.5, ease: 'power1.out' })
+	.to('#slogun .s_txt02', { backgroundSize: "200% 100%", duration: 2.5, ease: 'power1.out' })
+	.to('#slogun .s_txt03', { backgroundSize: "200% 100%", duration: 2.5, ease: 'power1.out' });
+</script>
+
+이렇게 수정을 해서 스크립트는 내가 원하는 효과를 줬는데
+이제 #slogun .slogun p 컬러를 처음엔 #666 색이었다가 백그라운드 색상이 #fff로 변하게 하고싶으면 css를 어떻게 수정해야할까까

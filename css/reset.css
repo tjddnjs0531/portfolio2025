@@ -57,6 +57,27 @@ html {
     word-break: keep-all;
     word-wrap: break-word
 }
+@media screen and (max-width: 1536px) {
+	html { font-size: 60%; }
+}
+@media screen and (max-width: 1440px) {
+	html { font-size: 58%; }
+}
+@media screen and (max-width: 1280px) {
+	html { font-size: 56%; }
+}
+@media screen and (max-width: 1024px) {
+	html { font-size: 52%; }
+}
+@media screen and (max-width: 768px) {
+	html { font-size: 50%; }
+}
+@media screen and (max-width: 480px) {
+	html { font-size: 48%; }
+}
+@media screen and (max-width: 380px) {
+	html { font-size: 45%; }
+}
 
 *,*:after,*:before {
     box-sizing: border-box
