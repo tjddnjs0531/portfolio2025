@@ -145,33 +145,48 @@ body {
 #about .desc { text-align: center; color: #999; }
 #about .skill-wrap { margin-top: 80px; background: url('../img/bg-skill.png') repeat-x left center / auto 100%; }
 #about .skill-wrap ul { display: flex; align-items: flex-end; justify-content: center; gap: 20px; }
-#about .skill-wrap li { background: #fff; transition: all .3s ease-in; display: flex; flex-direction: column; justify-content: space-between; padding: 3rem 1rem 1rem; }
-#about .skill-wrap li:nth-child(1) { width: 160px; height: 54.4rem; }
-#about .skill-wrap li:nth-child(2) { width: 20.7rem; height: 50.8rem; }
-#about .skill-wrap li:nth-child(3) { width: 8rem; height: 59.9rem; }
-#about .skill-wrap li:nth-child(4) { width: 7rem; height: 39rem; }
-#about .skill-wrap li:nth-child(5) { width: 10.8rem; height: 44rem; }
-#about .skill-wrap li:nth-child(6) { width: 6.9rem; height: 49.9rem; }
-#about .skill-wrap li:hover { width: 36rem; background: #fef104; }
+#about .skill-wrap .in { background: #fff; transition: all .3s ease-in; display: flex; flex-direction: column; justify-content: space-between; padding: 3rem 1rem 1rem; }
+#about .skill-wrap li:nth-child(1) .in { width: 160px; height: 54.4rem; }
+#about .skill-wrap li:nth-child(2) .in { width: 20.7rem; height: 50.8rem; }
+#about .skill-wrap li:nth-child(3) .in { width: 8rem; height: 59.9rem; }
+#about .skill-wrap li:nth-child(4) .in { width: 7rem; height: 39rem; }
+#about .skill-wrap li:nth-child(5) .in { width: 10.8rem; height: 44rem; }
+#about .skill-wrap li:nth-child(6) .in { width: 6.9rem; height: 49.9rem; }
+#about .skill-wrap li .in:hover { width: 36rem; background: #fef104; }
 #about .skill-wrap .subj {font-size: 4rem;font-weight: 900;writing-mode: vertical-rl;margin: 0 0 0 auto;}
 #about .skill-wrap .subj >span { font-weight: 400; }
 #about .skill-wrap .num { font-size: 12rem; line-height: 1; opacity: 0; visibility: hidden; height: 0; transition: all 0s linear; }
 #about .skill-wrap .num >span { font-size: 0.3333333333333333em; }
 #about .skill-wrap .barcode { display: block; width: 100%; background: url('../img/barcode.svg') repeat-x left; }
-#about .skill-wrap li:nth-child(1) .barcode { height: 90px; }
-#about .skill-wrap li:nth-child(2) .barcode { height: 40px; }
-#about .skill-wrap li:nth-child(3) .barcode { height: 11px; }
-#about .skill-wrap li:nth-child(4) .barcode { height: 19px; }
-#about .skill-wrap li:nth-child(5) .barcode { height: 19px; }
-#about .skill-wrap li:nth-child(6) .barcode { height: 3px; }
-#about .skill-wrap li:hover { width: 360px; background: #fef104; }
-#about .skill-wrap li:hover .num { opacity: 1; visibility: visible; height: auto; transition: all 0.3s linear 0.3s; }
-#about .skill-wrap li:hover:not(:hover) .num { transition: all 0.1s linear; }
+#about .skill-wrap li:nth-child(1) .barcode { height: 9rem; }
+#about .skill-wrap li:nth-child(2) .barcode { height: 4rem; }
+#about .skill-wrap li:nth-child(3) .barcode { height: 1.1rem; }
+#about .skill-wrap li:nth-child(4) .barcode { height: 1.9rem; }
+#about .skill-wrap li:nth-child(5) .barcode { height: 1.9rem; }
+#about .skill-wrap li:nth-child(6) .barcode { height: .3rem; }
+#about .skill-wrap .in:hover .num { opacity: 1; visibility: visible; height: auto; transition: all 0.3s linear 0.3s; }
+#about .skill-wrap .in:hover:not(:hover) .num { transition: all 0.1s linear; }
 
 #about .name { display: flex; align-items: center; padding-bottom: 30px; border-bottom: 1px solid #fff; margin: 180px 0 0;}
 #about .name li { width: 50%; font-size: 2.4rem; color: #fff; }
+
 @media (max-width: 1024px) {
-	#about .skill-wrap li:hover { width: 25rem; }
+	#about .skill-wrap ul { flex-direction: column; align-items: flex-start; }
+	#about .skill-wrap .in { padding-top: 2rem; }
+	#about .skill-wrap li { width: 100%;}
+	#about .skill-wrap li:nth-child(2) { padding-left: 12rem; }
+	#about .skill-wrap li:nth-child(1) .in { height: 24rem; width: 70%; }
+	#about .skill-wrap li:nth-child(2) .in { height: 19rem; width: 60%; }
+	#about .skill-wrap li:nth-child(3) .in { height: 17rem; width: 80%; }
+	#about .skill-wrap li:nth-child(4) .in { height: 18rem; width: 50%; }
+	#about .skill-wrap li:nth-child(5) .in { height: 18rem; width: 60%; }
+	#about .skill-wrap li:nth-child(6) .in { height: 16rem; width: 80%; }
+	#about .skill-wrap li .in:hover { width: 100%; }
+
+	#about .skill-wrap .subj { writing-mode: initial; }
+	#about .skill-wrap .num { font-size: 6rem; }
+	#about .skill-wrap .num >span {  }
+	#about .skill-wrap .barcode { }
 
 }
 

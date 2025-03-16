@@ -173,8 +173,18 @@ const fadeInBoxes = document.querySelectorAll('.fade-in-box');
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // 요소가 화면에 보이면 'visible' 클래스를 추가
-      entry.target.classList.add('visible');
+      // 요소가 화면에 보이면
+      const target = entry.target;
+      if (target.classList.contains('delay')) {
+        // 'delay' 클래스가 있으면 지연을 추가
+        const delayTime = target.getAttribute('data-delay') || 0; // data-delay 속성에서 딜레이 시간(초) 가져오기, 기본값은 0초
+        setTimeout(() => {
+          target.classList.add('visible');
+        }, delayTime * 1000); // 딜레이 시간은 초 단위로 설정
+      } else {
+        // 'delay' 클래스가 없으면 바로 visible 클래스를 추가
+        target.classList.add('visible');
+      }
     } else {
       // 요소가 화면에서 벗어나면 'visible' 클래스를 제거
       entry.target.classList.remove('visible');
