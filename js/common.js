@@ -131,9 +131,8 @@ const projectTitle = gsap.timeline({
 		pin: false,
 		// markers: true,
 		scrub: false,
-		toggleActions: "play reverse play reverse",
+		toggleActions: "play none none none",
 		start: 'top 50%',
-		end: 'bottom'
 	}
 });
 
@@ -152,9 +151,8 @@ const contactTitle = gsap.timeline({
 		pin: false,
 		// markers: true,
 		scrub: false,
-		toggleActions: "play reverse play reverse",
-		start: 'top',
-		end: 'bottom'
+		toggleActions: "play none none none",
+		start: 'top 80%',
 	}
 });
 
@@ -198,3 +196,37 @@ const observer = new IntersectionObserver((entries, observer) => {
 fadeInBoxes.forEach(box => {
   observer.observe(box);
 });
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+let projectTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".project-container",
+        start: "top top",
+        end: "+=" + 1 * window.innerHeight,
+        scrub: 1,
+        pin: true
+    }
+});
+
+let items = [...document.querySelectorAll(".project-item")];
+
+// 전체 리스트 스크롤 애니메이션
+projectTimeline.to(".project-item-wrap", {
+    y: -200 + 0.3 * window.innerHeight,
+    duration: 1,
+    ease: "none"
+}, 0.2);
+if (window.innerWidth >= 1024) {
+	// 개별 아이템 축소 애니메이션
+	items.forEach((item, index) => {
+		if (index === items.length - 1) return;
+	
+		projectTimeline.to(item, {
+			duration: 0.6,
+			height: 110,
+			ease: "none"}, 0.6 * index);
+	});
+  }
