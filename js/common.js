@@ -152,7 +152,7 @@ const contactTitle = gsap.timeline({
 		// markers: true,
 		scrub: false,
 		toggleActions: "play none none none",
-		start: 'top 80%',
+		start: 'top 50%',
 	}
 });
 
@@ -198,35 +198,62 @@ fadeInBoxes.forEach(box => {
 });
 
 
-
-gsap.registerPlugin(ScrollTrigger);
-
-let projectTimeline = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".project-container",
-        start: "top top",
-        end: "+=" + 1 * window.innerHeight,
-        scrub: 1,
-        pin: true
+function initScrollAnimation() {
+    // 기존 ScrollTrigger, 타임라인 제거
+    ScrollTrigger.getById("projectTimeline")?.kill(); 
+    if (window.projectTimeline) {
+        window.projectTimeline.kill();
     }
+
+    if (window.innerWidth < 1024) return; // 모바일에서 실행 안 함
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    let projectTimeline = gsap.timeline({
+        scrollTrigger: {
+            id: "projectTimeline", // 특정 ID 부여
+            trigger: ".project-container",
+            start: "top top",
+            end: "+=" + 1 * window.innerHeight,
+            scrub: 1,
+            pin: true
+        }
+    });
+
+    let items = [...document.querySelectorAll(".project-item")];
+
+    projectTimeline.to(".project-item-wrap", {
+        y: -400 + 0.3 * window.innerHeight,
+        duration: 1,
+        ease: "none"
+    }, 0.2);
+
+    items.forEach((item, index) => {
+        if (index === items.length - 1) return;
+        projectTimeline.to(item, {
+            duration: 0.6,
+            height: 110,
+            ease: "none"
+        }, 0.6 * index);
+    });
+
+    window.projectTimeline = projectTimeline;
+}
+
+
+// 최초 실행
+initScrollAnimation();
+
+
+window.addEventListener("resize", () => {
+    // 특정 ScrollTrigger만 제거 (projectTimeline만 삭제)
+    ScrollTrigger.getAll().forEach(st => {
+        if (st.vars.id === "projectTimeline") {
+            st.kill();
+        }
+    });
+
+    initScrollAnimation();
+    ScrollTrigger.refresh();
 });
 
-let items = [...document.querySelectorAll(".project-item")];
-
-// 전체 리스트 스크롤 애니메이션
-projectTimeline.to(".project-item-wrap", {
-    y: -200 + 0.3 * window.innerHeight,
-    duration: 1,
-    ease: "none"
-}, 0.2);
-if (window.innerWidth >= 1024) {
-	// 개별 아이템 축소 애니메이션
-	items.forEach((item, index) => {
-		if (index === items.length - 1) return;
-	
-		projectTimeline.to(item, {
-			duration: 0.6,
-			height: 110,
-			ease: "none"}, 0.6 * index);
-	});
-  }
