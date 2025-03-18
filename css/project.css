@@ -1,0 +1,18 @@
+#projectDetail { padding-top: 300px; }
+#projectDetail h3 { font-size: 6rem; font-weight: 600; color: #000; display: flex; gap: 2rem; align-items: center; padding: 0 var(--sidePadding); margin-bottom: 9rem; }
+#projectDetail h3::before { content: ''; display: inline-block; width: 4rem; height: 4rem; background: url('../img/twingkle1.svg') no-repeat center / 100%; filter: brightness(0);}
+
+#projectDetail .img { width: 100%; aspect-ratio: 12 / 5; border-top: 1px solid #000; border-bottom: 1px solid #000;}
+#projectDetail .img img { width: 100%; height: 100%; object-fit: cover; object-position: top;}
+#projectDetail .front { width: 100%; aspect-ratio: 12 / 5;}
+#projectDetail .front iframe { width: 100%; height: 100%; object-fit: cover; }
+#projectDetail .info { padding: 10rem var(--sidePadding); display: flex; align-items: flex-start; flex-wrap: wrap; gap: 12rem;}
+#projectDetail .info >* { width: calc(50% - 6rem); }
+#projectDetail .info .tit { font-size: 2.4rem; font-weight: 500; margin-bottom: 4rem;  }
+#projectDetail .detail {}
+#projectDetail .detail li { display: flex; align-items: center;}
+#projectDetail .detail li + li { margin-top: 5px; }
+#projectDetail .detail strong { position: relative; display: inline-block; font-size: 2.4rem; color: #666; width: 14rem;  }
+#projectDetail .detail strong::before { content: ''; position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: 1px; height: 20px; background: #ccc; }
+#projectDetail .detail span { display: inline-block; font-size: 2.4rem; color: #666; padding-left: 5rem; flex: 1; }
+#projectDetail .view .desc { color: #666; }

@@ -81,6 +81,10 @@ body {
 @media (max-width: 768px) {
 	#header{ --h: 8rem; }
 }
+@media (max-width: 480px) {
+	#header { justify-content: center;}
+	#header >p { display: none; }
+}
 
 #visual { position: relative; height: 880px; display: flex; flex-direction: column; align-items: center; justify-content: center;}
 #visual .typing-wrap {font-size: 4rem;width: auto;word-wrap: break-word;display: flex;gap: 20px;align-items: flex-end;line-height: 1.2;}
@@ -193,25 +197,18 @@ body {
 #project .title-wrap { display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; }
 #project .title { display: flex; }
 #project .title span { display: inline-block;transform: translateY(100%); opacity: 0; }
-#project .title-wrap a { display: flex; align-items: center; justify-content: center; width: 340px; height: 100px; font-size: 1.8rem; font-weight: 500; color: #666; background: rgba(0, 0, 0, .15); border-radius: 50px; }
-#project .title-wrap a::before { content: ''; display: block; width: 30px; height: 30px; background: url('../img/twingkle1.svg') no-repeat center / 100%; margin-right: 10px; }
-#project .title-wrap a::after { content: ''; display: block; width: 60px; height: 1px; background: #666; order: 2; margin: 0 20px;}
-#project .title-wrap a span {display: block;}
-#project .title-wrap a span:nth-child(1) { order: 1;}
-#project .title-wrap a span:nth-child(2) { order: 3;}
-#project .title-wrap a >* { transition: .3s; }
-#project .title-wrap a:hover { background: #000;}
-#project .title-wrap a:hover::before { filter: brightness(100);}
-#project .title-wrap a:hover::after { background: #fff; }
-#project .title-wrap a:hover span { color: #fff; }
-
-@media (max-width: 1024px) {
-	#project .title-wrap a { width: 250px; height: 60px; }
-	#project .title-wrap a::after { margin: 0 10px; width: 40px;}
-}
-@media (max-width: 768px) {
-	#project .title-wrap { flex-direction: column; gap: 2rem ;}
-}
+#project .more_prj { display: flex; align-items: center; justify-content: center; width: 340px; height: 100px; font-size: 1.8rem; font-weight: 500; color: #666; background: rgba(0, 0, 0, .15); border-radius: 50px; }
+#project .more_prj::before { content: ''; display: block; width: 30px; height: 30px; background: url('../img/twingkle1.svg') no-repeat center / 100%; margin-right: 10px; }
+#project .more_prj::after { content: ''; display: block; width: 60px; height: 1px; background: #666; order: 2; margin: 0 20px;}
+#project .more_prj span {display: block;}
+#project .more_prj span:nth-child(1) { order: 1;}
+#project .more_prj span:nth-child(2) { order: 3;}
+#project .more_prj >* { transition: .3s; }
+#project .more_prj:hover { background: #000;}
+#project .more_prj:hover::before { filter: brightness(100);}
+#project .more_prj:hover::after { background: #fff; }
+#project .more_prj:hover span { color: #fff; }
+#project .more_prj.isMobile{ display: none;}
 
 #project .project-container { height: 130vh; overflow: hidden; }
 #project .project-item-wrap {}
@@ -231,11 +228,15 @@ body {
 	#project .project-item .cont h3 { font-size: 10rem; }
 }
 @media (max-width: 1024px) {
+	#project .more_prj { width: 250px; height: 60px; }
+	#project .more_prj::after { margin: 0 10px; width: 40px;}
 	#project .project-container { height: auto;}
 	#project .project-item { border-radius: 0; padding: 3rem; height: auto !important;}
 	#project .project-item .cont h3 { font-size: 7rem; }
 }
 @media (max-width: 768px) {
+	#project .more_prj.isPc{ display: none; }
+	#project .more_prj.isMobile{ display: flex; margin: 50px auto 0;}
 	#project .project-item { flex-direction: column; padding: 3rem 0;}
 	#project .project-item .cont { width: 100%; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between;}
 	#project .project-item .cont .btn-more { width: 100%; margin-bottom: 2rem;}
@@ -246,17 +247,18 @@ body {
 
 
 #project .project-list { display: flex; flex-wrap: wrap; align-items: center; gap: 8rem 4rem; }
-#project .project-list li { width: calc(25% - 3rem); aspect-ratio: 3/4; }
+#project .project-list li { width: calc(25% - 3rem); aspect-ratio: 3/4; z-index: 1; }
 #project .project-list .cont { margin-bottom: 4rem; }
 #project .project-list .cont h3 { font-size: 3.6rem; }
 #project .project-list .cont p { font-size: 2.4rem; color: #666; }
 #project .project-list .project-box-link {position: relative;display: block;width: 100%;height: 100%;transition-duration: 10ms;transition-timing-function: cubic-bezier(.165,.84,.44,1)}
-#project .project-list .project-box-front { position: relative; z-index: 1; background: #000;height: 100%;display: flex;flex-direction: column;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;color: #fff;padding: 6rem 4rem 4rem;border-radius: 3rem; opacity: 0; visibility: hidden; transition-duration: .6s; transition-timing-function: cubic-bezier(.86,0,.07,1)}
+#project .project-list .project-box-front { position: relative; z-index: 2; background: #000;height: 100%;display: flex;flex-direction: column;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;color: #fff;padding: 6rem 4rem 4rem;border-radius: 3rem; opacity: 0; visibility: hidden; transition-duration: .6s; transition-timing-function: cubic-bezier(.86,0,.07,1)}
 #project .project-list .project-box-front h3 { font-size: 4rem; font-weight: 600; }
 #project .project-list .project-box-front span { display: block; font-size: 1.6rem; margin-bottom: 0.5em; }
 #project .project-list .project-box-front p { font-size: 2.4rem; }
 #project .project-list .project-box-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 3rem; overflow: hidden; transition-duration: .6s; transition-timing-function: cubic-bezier(.86,0,.07,1) }
 
+#project .project-list .project-box-link:hover { z-index: 2;}
 #project .project-list .project-box-link:hover .project-box-front { opacity: 1; visibility: visible; transform: translate(40px, 10px) rotate(7deg); }
 #project .project-list .project-box-link:hover .project-box-back { transform: translate(0, -150px) rotate(-5deg); }
 
@@ -270,6 +272,7 @@ body {
 	#project .project-list .project-box-link:hover .project-box-back { transform: translate(0, -130px) rotate(-3deg); }
 }
 @media (max-width: 768px) {
+	#project .project-list li:nth-child(n+5) { display: none; }
 	#project .project-list .cont { margin-bottom: 2rem; }
 	#project .project-list .cont h3 { font-size: 3rem; }
 	#project .project-list .cont p { font-size: 2rem; }
