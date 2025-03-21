@@ -194,7 +194,7 @@ body {
 #project .project-item .cont p { font-size: 1.8rem; margin: 1em 0; }
 #project .project-item .cont .btn-more { display: inline-block;  padding: 11px 80px 11px 20px; border: 1px solid #121212; box-sizing: border-box; font-size: 1.8rem; font-weight: 400; background: url('../img/arrow_right.svg') no-repeat right 20px center; }
 #project .project-item .cont .btn-more:hover { animation: arrowMove .3s forwards }
-#project .project-item .img { width: 40%; height: 100%; }
+#project .project-item .img { width: 40%; height: 100%; overflow: hidden; }
 #project .project-item .img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
 @media (max-width: 1280px) {
@@ -275,13 +275,14 @@ body {
 #contact .container h3 { font-size: 4rem; }
 #contact .container p { font-size: 2.4rem; color: #666; margin-top: 1em; text-align: center;}
 #contact .flow-text-track { width: 100%; overflow: hidden; }
-#contact .flow-text { font-size: 14rem; color: #eee; white-space: nowrap; animation: flowText 10s linear infinite;}
+#contact .flow-text { font-size: 14rem; color: #eee; white-space: nowrap; animation: flowText 30s linear infinite;}
 
 @media (max-width: 768px) {
 	#contact .title-wrap { padding-bottom: 1rem; }
 	#contact .title-wrap .desc { font-size: 2.5vw; }
 	#contact .container h3 { font-size: 4vw; }
 	#contact .container p { font-size: 2.5vw; }
+	#contact .flow-text { animation: flowText 10s linear infinite;}
 }
 
 
@@ -354,7 +355,7 @@ body {
 }
 @keyframes flowText {
 	0% {
-	  transform: translateX(50%);
+	  transform: translateX(0);
 	}
 	100% {
 	  transform: translateX(-100%);
