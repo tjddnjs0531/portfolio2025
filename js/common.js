@@ -190,6 +190,7 @@ const observer = new IntersectionObserver((entries, observer) => {
   });
 }, {
   threshold: 0.5, // 요소가 50% 이상 보일 때 애니메이션 시작
+  rootMargin: "50px 0px 50px 0px",
 });
 
 // 각 fade-in-box에 대해 옵저버 등록
