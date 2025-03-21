@@ -1,18 +1,48 @@
-#projectDetail { padding-top: 300px; }
+#projectDetail { padding-top: 20vw; }
 #projectDetail h3 { font-size: 6rem; font-weight: 600; color: #000; display: flex; gap: 2rem; align-items: center; padding: 0 var(--sidePadding); margin-bottom: 9rem; }
 #projectDetail h3::before { content: ''; display: inline-block; width: 4rem; height: 4rem; background: url('../img/twingkle1.svg') no-repeat center / 100%; filter: brightness(0);}
 
 #projectDetail .img { width: 100%; aspect-ratio: 12 / 5; border-top: 1px solid #000; border-bottom: 1px solid #000;}
 #projectDetail .img img { width: 100%; height: 100%; object-fit: cover; object-position: top;}
+#projectDetail .img_mo,
+#projectDetail .img_tab { display: none; }
 #projectDetail .front { width: 100%; aspect-ratio: 12 / 5;}
 #projectDetail .front iframe { width: 100%; height: 100%; object-fit: cover; }
 #projectDetail .info { padding: 10rem var(--sidePadding); display: flex; align-items: flex-start; flex-wrap: wrap; gap: 12rem;}
 #projectDetail .info >* { width: calc(50% - 6rem); }
 #projectDetail .info .tit { font-size: 2.4rem; font-weight: 500; margin-bottom: 4rem;  }
 #projectDetail .detail {}
-#projectDetail .detail li { display: flex; align-items: center;}
+#projectDetail .detail li { display: flex; align-items: center; font-size: 2.4rem; }
 #projectDetail .detail li + li { margin-top: 5px; }
-#projectDetail .detail strong { position: relative; display: inline-block; font-size: 2.4rem; color: #666; width: 14rem;  }
+#projectDetail .detail strong { position: relative; display: inline-block; color: #666; width: 14rem;  }
 #projectDetail .detail strong::before { content: ''; position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: 1px; height: 20px; background: #ccc; }
-#projectDetail .detail span { display: inline-block; font-size: 2.4rem; color: #666; padding-left: 5rem; flex: 1; }
+#projectDetail .detail span { display: inline-block; color: #666; padding-left: 5rem; flex: 1; }
 #projectDetail .view .desc { color: #666; }
+
+#projectDetail .btn-wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; }
+#projectDetail .btn-wrap a { display: inline-flex; align-items: center; justify-content: center; gap: 20px; width: 28rem; height: 10rem; border-radius: 50px; background: #eee; font-size: 2.4rem; font-weight: 500; color: #666; transition: .3s;}
+#projectDetail .btn-wrap a img { transition: .3s;}
+#projectDetail .btn-wrap a:hover { background: #000; color: #fff;}
+#projectDetail .btn-wrap a:hover img { filter: brightness(100); }
+
+@media (max-width: 1024px) {
+	#projectDetail h3 { font-size: 5vw; }
+	#projectDetail h3::before { width: 3vw; height: 3vw; }
+	#projectDetail .img { height: 80vh; aspect-ratio: unset;}
+	#projectDetail .img_pc { display: none; }
+	#projectDetail .img_tab { display: block; }
+	#projectDetail .info { gap: 5rem;}
+	#projectDetail .info >* { width: 100%; }
+	#projectDetail .info .tit { margin-bottom: 3rem; }
+	#projectDetail .btn-wrap a { width: 25rem; height: 6rem; font-size: 2.2rem; }
+	#projectDetail .btn-wrap a img { height: 3rem;}
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 480px) {
+	#projectDetail h3 { font-size: 6vw; gap: 1rem; margin-bottom: 5rem; }
+	#projectDetail h3::before { width: 4vw; height: 4vw; }
+
+	#projectDetail .img_tab { display: none; }
+	#projectDetail .img_mo { display: block; }
+}
