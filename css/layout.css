@@ -224,7 +224,7 @@ body {
 #project .project-list li { width: calc(25% - 3rem); aspect-ratio: 3/4; z-index: 1; }
 #project .project-list .cont { margin-bottom: 4rem; }
 #project .project-list .cont h3 { font-size: 3.6rem; }
-#project .project-list .cont p { font-size: 2.4rem; color: #666; }
+#project .project-list .cont p { font-size: 2rem; color: #666; }
 #project .project-list .project-box-link {position: relative;display: block;width: 100%;height: 100%;transition-duration: 10ms;transition-timing-function: cubic-bezier(.165,.84,.44,1)}
 #project .project-list .project-box-front { position: relative; z-index: 2; background: #000;height: 100%;display: flex;flex-direction: column;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;color: #fff;padding: 6rem 4rem 4rem;border-radius: 3rem; opacity: 0; visibility: hidden; transition-duration: .6s; transition-timing-function: cubic-bezier(.86,0,.07,1)}
 #project .project-list .project-box-front h3 { font-size: 4rem; font-weight: 600; }
