@@ -84,7 +84,10 @@ html {
 }
 
 a{text-decoration:none; color: inherit;}
-a:focus{outline:2px solid black;}
+a:focus-visible{
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(255, 200, 1, 0.5);
+}
 input[type="text"],input[type="password"],textarea{
 	appearance:none;
 	border:1px solid #ccc;
