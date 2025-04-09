@@ -152,7 +152,7 @@ body {
 
 #slogun { padding-top: 20rem; }
 #slogun .slogun { font-family: 'Dealoras'; position: relative; font-size: 12rem; color: rgba(255,255,255,.2);}
-#slogun .slogun p { position: relative; width: -webkit-max-content; width: -moz-max-content; width: max-content; -webkit-text-fill-color: rgba(255,255,255,.2); -webkit-background-clip: text;background-repeat: no-repeat;background-image: -webkit-gradient(linear, left top, right top, from(#fff), color-stop(50%, #fff), color-stop(50.1%, transparent));background-image: -o-linear-gradient(left, #fff 0%, #fff 50%, transparent 50.1%);background-image: linear-gradient(90deg, #fff 0%, #fff 50%, transparent 50.1%);background-size: 0% 100%; -webkit-transform: translateY(100%); -ms-transform: translateY(100%); transform: translateY(100%); -webkit-transition:background-size cubic-bezier(.1,.5,.5,1) 0.5s; -o-transition:background-size cubic-bezier(.1,.5,.5,1) 0.5s; transition:background-size cubic-bezier(.1,.5,.5,1) 0.5s }
+#slogun .slogun p { position: relative; width: -webkit-max-content; width: -moz-max-content; width: max-content; -webkit-text-fill-color: rgba(255,255,255,.2); -webkit-background-clip: text; background-clip: text; background-repeat: no-repeat; background-image: -webkit-gradient(linear, left top, right top, from(#fff), color-stop(50%, #fff), color-stop(50.1%, transparent));background-image: -o-linear-gradient(left, #fff 0%, #fff 50%, transparent 50.1%);background-image: linear-gradient(90deg, #fff 0%, #fff 50%, transparent 50.1%);background-size: 0% 100%; -webkit-transform: translateY(100%); -ms-transform: translateY(100%); transform: translateY(100%); -webkit-transition:background-size cubic-bezier(.1,.5,.5,1) 0.5s; -o-transition:background-size cubic-bezier(.1,.5,.5,1) 0.5s; transition:background-size cubic-bezier(.1,.5,.5,1) 0.5s }
 #about .introduce.desc { color: #999; width: 50%; margin: 0 0 0 auto; text-align: left; word-break: keep-all; }
 
 @media (max-width: 1280px) {
@@ -221,7 +221,7 @@ body {
 
 
 #project .project-list { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-align: center; -ms-flex-align: center; align-items: center; gap: 8rem 4rem; }
-#project .project-list li { width: calc(25% - 3rem); aspect-ratio: 3/4; z-index: 1; }
+#project .project-list li { width: calc(25% - 3rem); aspect-ratio: 3/4;}
 #project .project-list .cont { margin-bottom: 4rem; }
 #project .project-list .cont h3 { font-size: 3.6rem; }
 #project .project-list .cont p { font-size: 2rem; color: #666; }
